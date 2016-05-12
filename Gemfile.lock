@@ -100,7 +100,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  pg
+  pg (= 0.18.4)
   rails (= 4.2.6)
 
 BUNDLED WITH
