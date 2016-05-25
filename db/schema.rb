@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160524232505) do
+ActiveRecord::Schema.define(version: 20160525045417) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,23 @@ ActiveRecord::Schema.define(version: 20160524232505) do
     t.string  "characteristic"
     t.integer "skill_type"
     t.text    "description"
+  end
+
+  create_table "species", force: :cascade do |t|
+    t.string  "name"
+    t.text    "description"
+    t.text    "physiology"
+    t.text    "society"
+    t.text    "homeworld"
+    t.text    "language"
+    t.text    "source_note"
+    t.integer "brawn"
+    t.integer "agility"
+    t.integer "intellect"
+    t.integer "cunning"
+    t.integer "willpower"
+    t.integer "presence"
+    t.integer "exp_starting"
   end
 
   create_table "users", force: :cascade do |t|
