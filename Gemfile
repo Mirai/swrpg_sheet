@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.6'
 gem 'pg', '0.18.4'
+gem 'seed-fu', '2.3.5'
 
 gem 'rpg_group_manager', path: '../rpg_group_manager'
 

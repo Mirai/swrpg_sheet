@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160524034959) do
+ActiveRecord::Schema.define(version: 20160524232505) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,15 +46,6 @@ ActiveRecord::Schema.define(version: 20160524034959) do
     t.text    "bio"
     t.text    "notes"
     t.integer "species_id"
-    t.integer "career_id"
-    t.integer "force_rating"
-    t.integer "soak"
-    t.integer "wound_threshould"
-    t.integer "wound_current"
-    t.integer "strain_threshold"
-    t.integer "strain_current"
-    t.integer "defense_melee"
-    t.integer "defense_ranged"
     t.integer "brawn"
     t.integer "agility"
     t.integer "intellect"
@@ -62,13 +53,19 @@ ActiveRecord::Schema.define(version: 20160524034959) do
     t.integer "willpower"
     t.integer "presence"
     t.integer "exp_total"
-    t.integer "exp"
+    t.integer "exp_remaining"
   end
 
   add_index "characters", ["campaign_id"], name: "index_characters_on_campaign_id", using: :btree
-  add_index "characters", ["career_id"], name: "index_characters_on_career_id", using: :btree
   add_index "characters", ["species_id"], name: "index_characters_on_species_id", using: :btree
   add_index "characters", ["user_id"], name: "index_characters_on_user_id", using: :btree
+
+  create_table "skills", force: :cascade do |t|
+    t.string  "name"
+    t.string  "characteristic"
+    t.integer "skill_type"
+    t.text    "description"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

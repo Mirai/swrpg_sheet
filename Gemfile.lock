@@ -101,6 +101,9 @@ GEM
     rake (11.1.2)
     responders (2.2.0)
       railties (>= 4.2.0, < 5.1)
+    seed-fu (2.3.5)
+      activerecord (>= 3.1, < 4.3)
+      activesupport (>= 3.1, < 4.3)
     sprockets (3.6.0)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -122,6 +125,7 @@ DEPENDENCIES
   pg (= 0.18.4)
   rails (= 4.2.6)
   rpg_group_manager!
+  seed-fu (= 2.3.5)
 
 BUNDLED WITH
    1.12.0
