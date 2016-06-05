@@ -14,4 +14,10 @@
 //= require jquery_ujs
 //= require bootstrap
 
-// require_tree .
+//= require core-js/client/shim.min
+
+//= require zone.js/dist/zone
+//= require reflect-metadata/Reflect
+//= require systemjs/dist/system.src
+
+//= require character-app/systemjs.config

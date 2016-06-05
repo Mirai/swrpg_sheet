@@ -22,5 +22,8 @@ module SwrpgSheet
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # Add node angular2 libraries to asset path
+    config.assets.paths << Rails.root.join("node_modules")
   end
 end
