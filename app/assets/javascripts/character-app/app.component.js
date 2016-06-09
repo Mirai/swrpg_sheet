@@ -9,14 +9,36 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_deprecated_1 = require('@angular/router-deprecated');
+var characters_component_1 = require('./characters-component/characters.component');
+var choose_species_component_1 = require('./choose-species-component/choose-species.component');
 var AppComponent = (function () {
     function AppComponent() {
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'character-app',
-            template: '<h1>Characters</h1>'
-        }), 
+            template: '<router-outlet></router-outlet>',
+            directives: [
+                router_deprecated_1.ROUTER_DIRECTIVES
+            ],
+            providers: [
+                router_deprecated_1.ROUTER_PROVIDERS
+            ]
+        }),
+        router_deprecated_1.RouteConfig([
+            {
+                path: '/',
+                name: 'Characters',
+                component: characters_component_1.CharactersComponent,
+                useAsDefault: true
+            },
+            {
+                path: '/new',
+                name: 'ChooseSpecies',
+                component: choose_species_component_1.ChooseSpeciesComponent,
+            }
+        ]), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
