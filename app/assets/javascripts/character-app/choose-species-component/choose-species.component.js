@@ -9,15 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var species_service_1 = require('./../services/species.service');
 var ChooseSpeciesComponent = (function () {
-    function ChooseSpeciesComponent() {
+    function ChooseSpeciesComponent(speciesService) {
+        this.speciesService = speciesService;
     }
+    ChooseSpeciesComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.speciesService
+            .query()
+            .then(function (species) { return _this.species = species; })
+            .catch(function (error) { return _this.error = error; });
+    };
     ChooseSpeciesComponent = __decorate([
         core_1.Component({
             selector: 'choose-species',
-            template: 'Choose Species'
+            template: "\n    <ul>\n      <li *ngFor=\"let selectedSpecies of species\">{{selectedSpecies.name}}</li>\n    </ul>\n  "
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [species_service_1.SpeciesService])
     ], ChooseSpeciesComponent);
     return ChooseSpeciesComponent;
 }());

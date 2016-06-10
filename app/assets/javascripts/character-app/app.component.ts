@@ -4,6 +4,8 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router
 import { CharactersComponent } from './characters-component/characters.component';
 import { ChooseSpeciesComponent } from './choose-species-component/choose-species.component';
 
+import { SpeciesService } from './services/species.service';
+
 @Component({
   selector: 'character-app',
   template: '<router-outlet></router-outlet>',
@@ -11,7 +13,8 @@ import { ChooseSpeciesComponent } from './choose-species-component/choose-specie
     ROUTER_DIRECTIVES
   ],
   providers: [
-    ROUTER_PROVIDERS
+    ROUTER_PROVIDERS,
+    SpeciesService
   ]
 })
 

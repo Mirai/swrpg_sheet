@@ -48,6 +48,7 @@ end
 gem 'seed-fu', '2.3.5'
 gem 'bootstrap-sass', '3.3.6'
 gem 'slim', '3.0.7'
+gem 'active_model_serializers', '0.10.0'
 
 gem 'rpg_group_manager', path: '../rpg_group_manager'
 

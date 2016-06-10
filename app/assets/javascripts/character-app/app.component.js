@@ -12,6 +12,7 @@ var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
 var characters_component_1 = require('./characters-component/characters.component');
 var choose_species_component_1 = require('./choose-species-component/choose-species.component');
+var species_service_1 = require('./services/species.service');
 var AppComponent = (function () {
     function AppComponent() {
     }
@@ -23,7 +24,8 @@ var AppComponent = (function () {
                 router_deprecated_1.ROUTER_DIRECTIVES
             ],
             providers: [
-                router_deprecated_1.ROUTER_PROVIDERS
+                router_deprecated_1.ROUTER_PROVIDERS,
+                species_service_1.SpeciesService
             ]
         }),
         router_deprecated_1.RouteConfig([
