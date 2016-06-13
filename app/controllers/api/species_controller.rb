@@ -1,5 +1,5 @@
 module Api
-  class SpeciesController < ActionController::Base
+  class SpeciesController < BaseController
     def index
       @species = Species.all
       render json: @species

@@ -1,5 +1,5 @@
 module Api
-  class CharactersController < ApplicationController
+  class CharactersController < BaseController
     def index
       #@characters = current_user.charactes
       @characters = Character.all
@@ -12,12 +12,24 @@ module Api
     end
 
     def create
+      @character = Character.create(character_params)
+      render json: @character
     end
 
     def update
+      @character = Character.find(params[:id])
+      @character.update(character_params)
+      render json: @character
     end
 
     def destroy
+    end
+
+    private
+
+    def character_params
+      # fill this in later
+      params.require(:character).permit!
     end
   end
 end

@@ -4,6 +4,7 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router
 import { CharactersComponent } from './characters-component/characters.component';
 import { ChooseSpeciesComponent } from './choose-species-component/choose-species.component';
 
+import { CharacterService } from './services/character.service';
 import { SpeciesService } from './services/species.service';
 
 @Component({
@@ -14,6 +15,7 @@ import { SpeciesService } from './services/species.service';
   ],
   providers: [
     ROUTER_PROVIDERS,
+    CharacterService,
     SpeciesService
   ]
 })

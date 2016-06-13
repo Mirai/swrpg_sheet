@@ -19,7 +19,7 @@ var CharacterService = (function () {
     CharacterService.prototype.query = function () {
         return this.http.get(this.apiUrl)
             .toPromise()
-            .then(function (response) { return response.json().data; })
+            .then(function (response) { return response.json(); })
             .catch(this.handleError);
     };
     CharacterService.prototype.get = function (id) {
@@ -48,7 +48,7 @@ var CharacterService = (function () {
         return this.http
             .post(this.apiUrl, JSON.stringify(character), { headers: headers })
             .toPromise()
-            .then(function (res) { return res.json().data; })
+            .then(function (res) { return res.json(); })
             .catch(this.handleError);
     };
     // Update existing Character

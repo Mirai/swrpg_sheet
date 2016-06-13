@@ -14,7 +14,7 @@ export class CharacterService {
   query(): Promise<Character[]> {
     return this.http.get(this.apiUrl)
                .toPromise()
-               .then(response => response.json().data)
+               .then(response => response.json())
                .catch(this.handleError);
   }
 
@@ -47,7 +47,7 @@ export class CharacterService {
     return this.http
                .post(this.apiUrl, JSON.stringify(character), {headers: headers})
                .toPromise()
-               .then(res => res.json().data)
+               .then(res => res.json())
                .catch(this.handleError);
   }
 
